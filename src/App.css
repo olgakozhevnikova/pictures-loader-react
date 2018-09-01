@@ -2,6 +2,10 @@
   padding: 2rem;
 }
 
+.sidebar {
+  margin-right: 5rem;
+}
+
 /* Styling navigation */
 .navigation {
   border: 1px solid #adaaaa;
@@ -25,8 +29,13 @@
 /* Styling main page */
 .main {
   border: 1px solid #707070;
-  padding: 4rem;
+  padding: 3rem;
   margin-bottom: 2rem;
+  display: flex;
+}
+
+.main-content {
+  width: 100%;
 }
 
 .picture {
@@ -64,8 +73,9 @@ button {
 /* Styling history page */
 .history {
   border: 1px solid #707070;
-  padding: 4rem;
+  padding: 3rem;
   margin-bottom: 2rem;
+  display: flex;
 }
 
 .pic-wrap {

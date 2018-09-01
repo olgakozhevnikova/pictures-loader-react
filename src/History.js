@@ -8,13 +8,18 @@ class History extends Component {
     console.log(pictures)
     return (
       <div className="history">
-				{pictures.length > 0 && pictures.map(pic => (
-          <Picture
-            key={date.replace(/ /g,'')}
-            picture={pic}
-            date={date}
-          />
-        ))}
+        <div className="sidebar">
+          <span>История</span>
+        </div>
+        <div className="picture-list">
+          {pictures.length > 0 && pictures.map(pic => (
+            <Picture
+              key={date.replace(/ /g,'')}
+              picture={pic}
+              date={date}
+            />
+          ))}
+        </div>
       </div>
     );
   }
