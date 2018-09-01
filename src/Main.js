@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Picture from './Picture';
 
 class Main extends Component {
 
@@ -8,9 +7,9 @@ class Main extends Component {
     const { picture, loadPic } = this.props
     return (
       <div className="main">
-        <Picture
-          picture={picture}
-        />
+        <div className="picture">
+          <img src={picture.original.webp}/>
+        </div>
         <div className="button">
           <button className="add-pic" onClick={loadPic}>Загрузить</button>
         </div>

@@ -8,7 +8,8 @@ import * as PicAPI from './PicturesAPI'
 
 class App extends Component {
   state = {
-    pictures: []
+    pictures: [],
+    date: ''
   }
 
   componentDidMount() {
@@ -18,9 +19,10 @@ class App extends Component {
   getPic() {
     PicAPI.get().then(picture => {
       this.setState(prevState => ({
-        pictures: [...prevState.pictures, picture]
+        pictures: [...prevState.pictures, picture],
+        date: Date()
       }))
-      console.log(this.state.pictures[this.state.pictures.length - 1])
+      console.log(this.state.date)
     })
   }
 
@@ -42,6 +44,7 @@ class App extends Component {
         <Route path="/history" render={() => (
           <History
             pictures={this.state.pictures}
+            date={this.state.date}
           />
         )}/>
       </div>
