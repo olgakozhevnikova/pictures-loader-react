@@ -41,7 +41,7 @@ class App extends Component {
         }
         <Route path="/history" render={() => (
           <History
-            loadedPic={this.state.loadedPic}
+            pictures={this.state.pictures}
           />
         )}/>
       </div>

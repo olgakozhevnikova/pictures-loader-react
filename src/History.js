@@ -4,14 +4,15 @@ import Picture from './Picture';
 
 class History extends Component {
   render() {
-    const { loadedPic } = this.props
+    const { pictures } = this.props
+    console.log(pictures)
     return (
       <div className="history">
-				{loadedPic.map(pic => {
+				{pictures.length > 0 && pictures.map(pic => (
           <Picture
             picture={pic}
           />
-        })}
+        ))}
       </div>
     );
   }

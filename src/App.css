@@ -54,3 +54,10 @@ button {
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* Styling history page */
+.history {
+  border: 1px solid #707070;
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
