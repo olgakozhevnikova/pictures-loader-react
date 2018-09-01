@@ -8,8 +8,7 @@ import * as PicAPI from './PicturesAPI'
 
 class App extends Component {
   state = {
-    picture: {},
-    loadedPic: []
+    pictures: []
   }
 
   componentDidMount() {
@@ -18,11 +17,10 @@ class App extends Component {
 
   getPic() {
     PicAPI.get().then(picture => {
-      this.setState(prevState => ({ 
-        picture: picture,
-        loadedPic: [...prevState.loadedPic, picture]
+      this.setState(prevState => ({
+        pictures: [...prevState.pictures, picture]
       }))
-      console.log(this.state)
+      console.log(this.state.pictures[this.state.pictures.length - 1])
     })
   }
 
@@ -33,14 +31,18 @@ class App extends Component {
           <Link to="/">Главная</Link>
           <Link to="/history">История</Link>
         </div>
-        <Route exact path="/" render={() => (
-          <Main
-            picture={this.state.picture}
-            loadPic={() => this.getPic()}
-          />
-        )}/>
+        {this.state.pictures.length > 0 && 
+          <Route exact path="/" render={() => (
+            <Main
+              picture={this.state.pictures[this.state.pictures.length - 1]}
+              loadPic={() => this.getPic()}
+            />
+          )}/>
+        }
         <Route path="/history" render={() => (
-          <History/>
+          <History
+            loadedPic={this.state.loadedPic}
+          />
         )}/>
       </div>
     );

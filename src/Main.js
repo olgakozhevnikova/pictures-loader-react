@@ -8,11 +8,9 @@ class Main extends Component {
     const { picture, loadPic } = this.props
     return (
       <div className="main">
-        {Object.keys(picture).length !==0 && (
-          <Picture
-            picture={picture}
-          />
-        )}
+        <Picture
+          picture={picture}
+        />
         <div className="button">
           <button className="add-pic" onClick={loadPic}>Загрузить</button>
         </div>

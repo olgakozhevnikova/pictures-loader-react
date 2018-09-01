@@ -4,9 +4,14 @@ import Picture from './Picture';
 
 class History extends Component {
   render() {
+    const { loadedPic } = this.props
     return (
       <div className="history">
-				This is the history component.
+				{loadedPic.map(pic => {
+          <Picture
+            picture={pic}
+          />
+        })}
       </div>
     );
   }
