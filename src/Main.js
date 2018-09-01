@@ -13,7 +13,9 @@ class Main extends Component {
             picture={picture}
           />
         )}
-				<button className="add-pic" onClick={loadPic}>Загрузить</button>
+        <div className="button">
+          <button className="add-pic" onClick={loadPic}>Загрузить</button>
+        </div>
 			</div>
     );
   }
