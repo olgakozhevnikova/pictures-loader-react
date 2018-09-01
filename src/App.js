@@ -8,7 +8,8 @@ import * as PicAPI from './PicturesAPI'
 
 class App extends Component {
   state = {
-    picture: {}
+    picture: {},
+    loadedPic: []
   }
 
   componentDidMount() {
@@ -17,8 +18,11 @@ class App extends Component {
 
   getPic() {
     PicAPI.get().then(picture => {
-      this.setState({ picture: picture })
-      console.log(this.state.picture)
+      this.setState(prevState => ({ 
+        picture: picture,
+        loadedPic: [...prevState.loadedPic, picture]
+      }))
+      console.log(this.state)
     })
   }
 
