@@ -8,12 +8,13 @@ import * as PicAPI from './PicturesAPI'
 
 class App extends Component {
   state = {
-    picture: ''
+    pictures: ''
   }
 
   componentDidMount() {
-    PicAPI.get().then(picture => {
-      this.setState({ picture })
+    PicAPI.get().then(pictures => {
+      this.setState({ pictures })
+      console.log(this.state.pictures)
     })
   }
 
@@ -25,7 +26,9 @@ class App extends Component {
           <Link to="/history">История</Link>
         </div>
         <Route exact path="/" render={() => (
-          <Main/>
+          <Main
+            pictures={this.state.pictures}
+          />
         )}/>
         <Route path="/history" render={() => (
           <History/>
