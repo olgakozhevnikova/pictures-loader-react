@@ -8,13 +8,17 @@ import * as PicAPI from './PicturesAPI'
 
 class App extends Component {
   state = {
-    pictures: ''
+    picture: {}
   }
 
   componentDidMount() {
-    PicAPI.get().then(pictures => {
-      this.setState({ pictures })
-      console.log(this.state.pictures)
+    this.getPic()
+  }
+
+  getPic() {
+    PicAPI.get().then(picture => {
+      this.setState({ picture: picture })
+      console.log(this.state.picture)
     })
   }
 
@@ -27,7 +31,8 @@ class App extends Component {
         </div>
         <Route exact path="/" render={() => (
           <Main
-            pictures={this.state.pictures}
+            picture={this.state.picture}
+            loadPic={() => this.getPic()}
           />
         )}/>
         <Route path="/history" render={() => (
