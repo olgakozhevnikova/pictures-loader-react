@@ -37,7 +37,13 @@
 }
 
 .main img {
-  width: 50%;
+  position: relative;
+  float: left;
+  width: 453px;
+  height: 252px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .button {
@@ -60,4 +66,24 @@ button {
   border: 1px solid #707070;
   padding: 4rem;
   margin-bottom: 2rem;
+}
+
+.pic-wrap {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.pic {
+  min-width: 12rem;
+  min-height: 6rem;
+}
+
+.pic-wrap img {
+  position: relative;
+  float: left;
+  width: 10rem;
+  height: 6rem;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
