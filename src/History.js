@@ -10,6 +10,7 @@ class History extends Component {
       <div className="history">
 				{pictures.length > 0 && pictures.map(pic => (
           <Picture
+            key={date.replace(/ /g,'')}
             picture={pic}
             date={date}
           />
